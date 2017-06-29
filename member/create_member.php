@@ -1,6 +1,6 @@
 <?php
 
-require 'database.php';
+require '../database/database.php';
 
 if ( !empty($_POST)) {
 // keep track validation errors
@@ -56,53 +56,45 @@ if ( !empty($_POST)) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<link   href="css/bootstrap.min.css" rel="stylesheet">
-	<script src="js/bootstrap.min.js"></script>
-</head>
-
-<body>
+<?php include('../layout/body_layout.php');?>	
 	<div class="container">
 		<div class="span10 offset1">
 			<div class="row">
 				<h3>Create Member</h3>
 			</div>
 
-			<form class="form-horizontal" action="create_member.php" method="post">
-				<div class="control-group <?php echo !empty($first_nameError)?'error':'';?>">
+			<form class="form-group col-md-4" action="create_member.php" method="post">
+				<div class="form-group <?php echo !empty($first_nameError)?'error':'';?>">
 					<label class="control-label">First name</label>
-					<div class="controls">
-						<input name="first_name" type="text"  placeholder="First Name" value="<?php echo !empty($first_name)?$first_name:'';?>">
+					<div class="form-group">
+						<input class="form-control" name="first_name" type="text"  placeholder="First Name" value="<?php echo !empty($first_name)?$first_name:'';?>">
 						<?php if (!empty($first_nameError)): ?>
 							<span class="help-inline"><?php echo $first_nameError;?></span>
 						<?php endif; ?>
 					</div>
 				</div>
-				<div class="control-group <?php echo !empty($second_nameError)?'error':'';?>">
-					<label class="control-label">Second Name</label>
-					<div class="controls">
-						<input name="second_name" type="text"  placeholder="Name" value="<?php echo !empty($second_name)?$second_name:'';?>">
+				<div class="form-group <?php echo !empty($second_nameError)?'error':'';?>">
+					<label class="form-group">Second Name</label>
+					<div class="form-group">
+						<input  class="form-control" name="second_name" type="text"  placeholder="Name" value="<?php echo !empty($second_name)?$second_name:'';?>">
 						<?php if (!empty($second_nameError)): ?>
 							<span class="help-inline"><?php echo $second_nameError;?></span>
 						<?php endif; ?>
 					</div>
 				</div>
-				<div class="control-group <?php echo !empty($id_numberError)?'error':'';?>">
-					<label class="control-label">ID Number</label>
+				<div class="form-group <?php echo !empty($id_numberError)?'error':'';?>">
+					<label class="form-group">ID Number</label>
 					<div class="controls">
-						<input name="id_number" type="text" placeholder="ID Number" value="<?php echo !empty($id_number)?$id_number:'';?>">
+						<input class="form-control" name="id_number" type="text" placeholder="ID Number" value="<?php echo !empty($id_number)?$id_number:'';?>">
 						<?php if (!empty($id_numberError)): ?>
 							<span class="help-inline"><?php echo $id_numberError;?></span>
 						<?php endif;?>
 					</div>
 				</div>
-				<div class="control-group <?php echo !empty($mobileError)?'error':'';?>">
+				<div class="form-group <?php echo !empty($mobileError)?'error':'';?>">
 					<label class="control-label">Mobile Number</label>
 					<div class="controls">
-						<input name="mobile" type="text"  placeholder="Mobile Number" value="<?php echo !empty($mobile)?$mobile:'';?>">
+						<input  class="form-control" name="mobile" type="text"  placeholder="Mobile Number" value="<?php echo !empty($mobile)?$mobile:'';?>">
 						<?php if (!empty($mobileError)): ?>
 							<span class="help-inline"><?php echo $mobileError;?></span>
 						<?php endif;?>
@@ -116,5 +108,3 @@ if ( !empty($_POST)) {
 		</div>
 
 	</div> <!-- /container -->
-</body>
-</html>
