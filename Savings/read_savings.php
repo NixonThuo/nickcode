@@ -10,7 +10,6 @@
           <th>Amount</th>
           <th>Extra Savings</th>
           <th>Date Paid</th>
-          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -32,20 +31,14 @@
                     echo '<td>' . $row['amount_saved'] . '</td>';
                     echo '<td>' . $row['extra_savings'] . '</td>';
                     echo '<td>' . $row['date_paid'] . '</td>';
-                    echo '<td width=250>';
-                    echo '<a class="btn btn-primary" href="create_saving.php?id=' . $row['id'] . '">Save</a>';
-                    echo ' ';
-                    echo '<a class="btn btn-default" href="read_savings.php?id=' . $row['id'] . '">Report</a>';
-                    echo ' ';
-                    echo '<a class="btn btn-default" href="read_savings.php?id=' . $row['id'] . '">Report</a>';
-                    echo ' ';
-                    echo '</td>';
-                    echo '</tr>';
             }
             Database::disconnect();
           }
           ?>
         </tbody>
       </table>
+      <div class="form-actions">
+        <a class="btn btn-default" href="index.php">Back</a>
+      </div>
     </div>
   </div> <!-- /container -->
