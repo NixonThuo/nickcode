@@ -78,7 +78,7 @@ ALTER TABLE `members`
 
 CREATE TABLE savings (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-  id_number INT references members(id_number),
+  member_id INT references members(id),
   amount_saved VARCHAR(30) NOT NULL,
   extra_savings VARCHAR(30) NOT NULL,
   date_paid DATE ,
