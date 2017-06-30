@@ -29,6 +29,10 @@
 					echo '<td width=250>';
 					echo '<a class="btn btn-primary" href="create_saving.php?id='.$row['id'].'">Save</a>';
 					echo ' ';
+					echo '<a class="btn btn-default" href="read_savings.php?id='.$row['id'].'">Report</a>';
+					echo ' ';
+					echo '<a class="btn btn-default" href="read_savings.php?id='.$row['id'].'">Report</a>';
+					echo ' ';
 					echo '</td>';
 					echo '</tr>';
 				}
