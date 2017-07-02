@@ -1,5 +1,5 @@
+<?php include('../header/body_layout.php');?> 
 <?php
-require '../database/database.php';
 $id = null;
 if ( !empty($_GET['id'])) {
   $id = $_REQUEST['id'];
@@ -16,9 +16,7 @@ if ( null==$id ) {
   $data = $q->fetch(PDO::FETCH_ASSOC);
   Database::disconnect();
 }
-?>
-
-<?php include('../layout/body_layout.php');?>   
+?>  
 <div class="container">
 
   <div class="span10 offset1">

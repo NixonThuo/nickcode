@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <link   href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
-</head>
 
 <footer>
   <div class="container">
@@ -15,4 +8,6 @@
       </ul>
 </div>
 </footer>
+</body>
+</html>
 

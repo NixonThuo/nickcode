@@ -1,5 +1,5 @@
+<?php include('../header/body_layout.php');?> 
 <?php
-require '../database/database.php';
 $id = 0;
 
 if ( !empty($_GET['id'])) {
@@ -21,8 +21,6 @@ if ( !empty($_POST)) {
 
 }
 ?>
-
-<?php include('../layout/body_layout.php');?> 
 <div class="container">
    <div class="span10 offset1">
     <div class="row">

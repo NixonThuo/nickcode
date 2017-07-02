@@ -1,3 +1,9 @@
+<?php
+//include connection
+require '../database/database.php';
+//check if already logged in move to home page
+//if logged in redirect to members page
+?>
 <!doctype html>
 <htmllang="en">
     <head>
@@ -41,6 +47,12 @@
                 top: 18px;
             }
 
+            .top-left {
+                position: absolute;
+                left: : 10px;
+                top: 18px;
+            }
+
             .content {
                 text-align: center;
             }
@@ -66,10 +78,27 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
+                <div class="top-left links">
+                <a href="#">
+                    <?php 
+                if( $user->is_logged_in() ):
+                    echo $_SESSION["username"];
+                elseif (!($user->is_logged_in()) ):
+                endif;
+                ?>
+                </a>
+                </div>
                 <div class="top-right links">
-                        <a href="#">Home</a>
-                        <a href="#">Login</a>
-                        <a href="#">Register</a>
+                <?php 
+                if( $user->is_logged_in() ):
+                    echo '<a href="../member">Members</a>';
+                    echo '<a href="../Savings">Savings</a>';
+                    echo '<a href="../auth/logout.php">logout</a>';
+                elseif (!($user->is_logged_in()) ):
+                    echo '<a href="../auth/login.php">Login</a>';
+                    echo '<a href="../auth/register.php">Register</a>';
+                endif;
+                ?>
                 </div>
 
             <div class="content">

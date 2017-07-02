@@ -1,5 +1,5 @@
 
-<?php include('../layout/body_layout.php');?>		
+<?php include('../header/body_layout.php');?>		
 <div class="container">
 	<div class="row">
 		<h3 align="center">Select Member Who is Saving</h3>
@@ -17,7 +17,6 @@
 			</thead>
 			<tbody>
 				<?php
-				include '../database/database.php';
 				$pdo = Database::connect();
 				$sql = 'SELECT * FROM members ORDER BY id DESC';
 				foreach ($pdo->query($sql) as $row) {
@@ -27,11 +26,9 @@
 					echo '<td>'. $row['id_number'] . '</td>';
 					echo '<td>'. $row['mobile'] . '</td>';
 					echo '<td width=250>';
-					echo '<a class="btn btn-primary" href="create_saving.php?id='.$row['id'].'">Save</a>';
+					echo '<a class="btn btn-primary" href="create_saving.php?id='.$row['id'].'">Contribute</a>';
 					echo ' ';
-					echo '<a class="btn btn-default" href="read_savings.php?id='.$row['id'].'">Report</a>';
-					echo ' ';
-					echo '<a class="btn btn-default" href="read_savings.php?id='.$row['id'].'">Report</a>';
+					echo '<a class="btn btn-default" href="read_savings.php?id='.$row['id'].'">View Savings</a>';
 					echo ' ';
 					echo '</td>';
 					echo '</tr>';

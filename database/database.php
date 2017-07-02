@@ -1,7 +1,9 @@
-	
 <?php
+ob_start();
+session_start(); 
+
 class Database
-{
+{ 
     private static $dbName = 'kawa_chama_group' ;
     private static $dbHost = 'localhost' ;
     private static $dbUsername = 'root';
@@ -35,5 +37,12 @@ class Database
         self::$cont = null;
     }
 }
+
+//include the user class, pass in the database connection
+    include('../classes/user.php');
+    include('../classes/phpmailer/mail.php');
+    $pdo = Database::connect();
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $user = new User($pdo);
 ?>
     

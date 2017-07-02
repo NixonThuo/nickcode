@@ -85,13 +85,14 @@ CREATE TABLE savings (
   date_recorded TIMESTAMP
 );
 
-ALTER TABLE members ENGINE=InnoDB;
 
-CREATE TABLE Orders (
-    OrderID int NOT NULL,
-    OrderNumber int NOT NULL,
-    PersonID int,
-    PRIMARY KEY (OrderID),
-    CONSTRAINT FK_PersonOrder FOREIGN KEY (PersonID)
-    REFERENCES Persons(PersonID)
-);
+CREATE TABLE `users` (
+  `clerkID` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `active` varchar(255) NOT NULL,
+  `resetToken` varchar(255) DEFAULT NULL,
+  `resetComplete` varchar(3) DEFAULT 'No',
+  PRIMARY KEY (`clerkID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;

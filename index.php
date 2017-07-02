@@ -1,3 +1,3 @@
 <?php    
-header('Location: layout/welcome_layout.php');    
+header('Location: header/welcome_layout.php');    
 ?>

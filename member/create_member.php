@@ -1,7 +1,5 @@
+<?php include('../header/body_layout.php');?>	
 <?php
-
-require '../database/database.php';
-
 if ( !empty($_POST)) {
 // keep track validation errors
 	$first_nameError = null;
@@ -55,8 +53,6 @@ if ( !empty($_POST)) {
 	}
 }
 ?>
-
-<?php include('../layout/body_layout.php');?>	
 <div class="container">
 	<div class="span10 offset1">
 		<div class="row">

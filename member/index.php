@@ -1,5 +1,5 @@
 
-<?php include('../layout/body_layout.php');?>		
+<?php include('../header/body_layout.php');?>		
 <div class="container">
 	<div class="row">
 		<h3 align="center">Kawa List of  Members</h3>
@@ -20,7 +20,6 @@
 			</thead>
 			<tbody>
 				<?php
-				include '../database/database.php';
 				$pdo = Database::connect();
 				$sql = 'SELECT * FROM members ORDER BY id DESC';
 				foreach ($pdo->query($sql) as $row) {
